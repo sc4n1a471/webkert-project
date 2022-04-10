@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,15 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'webkert-project';
+
+  // openedPage = 'main'
+
+  constructor(private router: Router) {
+  }
+
+  changingPage(selectedPage: string) {
+    // this.openedPage = selectedPage
+    // console.log(this.openedPage)
+    this.router.navigateByUrl(selectedPage)
+  }
 }
