@@ -1,4 +1,4 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 
 @Component({
   selector: 'app-menu',
@@ -7,6 +7,7 @@ import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 })
 export class MenuComponent implements OnInit {
 
+  @Input() currentPage: string = ''
   @Output() selectedPage = new EventEmitter
 
   constructor() { }
@@ -14,8 +15,8 @@ export class MenuComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  changePage(pageValue: string) {
-    this.selectedPage.emit(pageValue)
+  changePage() {
+    this.selectedPage.emit(this.currentPage)
   }
 
 }

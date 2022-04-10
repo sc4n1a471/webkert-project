@@ -1,4 +1,4 @@
-<select #pageValue (change)="changePage(pageValue.value)">
+<select [(ngModel)]="currentPage" (change)="changePage()">
     <option value="main">Main</option>
     <option value="login">Login</option>
     <option value="register">Register</option>
