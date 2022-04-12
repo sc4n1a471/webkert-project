@@ -24,6 +24,8 @@ const routes: Routes = [
     redirectTo: '/main',
     pathMatch: 'full'
   },
+  { path: 'contact', loadChildren: () => import('./contact/contact.module').then(m => m.ContactModule) },
+  { path: 'aboutus', loadChildren: () => import('./aboutus/aboutus.module').then(m => m.AboutusModule) },
   {
     path: '**',
     redirectTo: 'not-found'
