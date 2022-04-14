@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {NavigationEnd, Router} from "@angular/router";
 import {filter} from "rxjs";
+import {MatSidenav} from "@angular/material/sidenav";
 
 @Component({
   selector: 'app-root',
@@ -41,4 +42,15 @@ export class AppComponent implements OnInit {
           /* console.log(this.openedPage); -- url levágva normálisan */
         })
   }
+
+  toggleSidenav(sidenav: MatSidenav) {
+    sidenav.toggle()
+  }
+
+  onCloseSidenav(event: any, sidenav: MatSidenav) {
+    if (event === true) {
+      sidenav.close()
+    }
+  }
+
 }
