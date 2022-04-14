@@ -1,33 +1,39 @@
 <!--<p>register works!</p>-->
 
 <div class="register_component">
-    <form [formGroup]="registerForm">
-        <div>
-            <label>Firstname: </label>
-            <input type="text" formControlName="fn" />
-        </div>
-        <div>
-            <label>Lastname: </label>
-            <input type="text" formControlName="ln" />
-        </div>
-        <div>
-            <label>Email: </label>
-            <input type="text" formControlName="email" />
-        </div>
-        <div>
-            <label>Password: </label>
-            <input type="password" formControlName="passwd" />
-        </div>
-        <div>
-            <label>Confirm password: </label>
-            <input type="password" formControlName="passwd_conf" />
-        </div>
-        <div>
-            <label>Date of birth: </label>
-            <input type="date" formControlName="birthday" />
-        </div>
-        <div>
-            <button (click)="register()">Register</button>
-        </div>
-    </form>
+    <div class="div_flex">
+        <form [formGroup]="registerForm">
+            <div class="name_field">
+                <mat-form-field>
+                    <mat-label>Firstname: </mat-label>
+                    <input matInput type="text" formControlName="fn" />
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>Lastname: </mat-label>
+                    <input matInput type="text" formControlName="ln" />
+                </mat-form-field>
+            </div>
+            <div class="other_field">
+                <mat-form-field>
+                    <mat-label>Email: </mat-label>
+                    <input matInput type="text" formControlName="email" />
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>Password: </mat-label>
+                    <input matInput type="password" formControlName="passwd" />
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>Confirm password: </mat-label>
+                    <input matInput type="password" formControlName="passwd_conf" />
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>Date of birth: </mat-label>
+                    <input matInput type="date" formControlName="birthday" />
+                </mat-form-field>
+            </div>
+            <div>
+                <button mat-raised-button (click)="register()">Register</button>
+            </div>
+        </form>
+    </div>
 </div>
