@@ -26,6 +26,7 @@ const routes: Routes = [
   },
   { path: 'contact', loadChildren: () => import('./pages/contact/contact.module').then(m => m.ContactModule) },
   { path: 'aboutus', loadChildren: () => import('./pages/aboutus/aboutus.module').then(m => m.AboutusModule) },
+  { path: 'offers', loadChildren: () => import('./pages/offers/offers.module').then(m => m.OffersModule) },
   {
     path: '**',
     redirectTo: 'not-found'

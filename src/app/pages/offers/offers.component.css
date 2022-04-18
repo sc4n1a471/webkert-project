@@ -1,0 +1,53 @@
+.offers_minden {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    height: 100vh;
+}
+
+mat-form-field {
+    padding: 5px 5px 5px 5px;
+    display: block;
+    /*width: 30%;*/
+    align-self: center;
+}
+div button {
+    margin: 5px;
+    /*align-self: center;*/
+}
+
+form {
+    column-count: 2;
+    width: 50%;
+    align-content: center;
+    align-self: center;
+}
+
+h1 {
+    padding-bottom: 50px;
+    font-size: xx-large;
+}
+
+.mat-radio-button ~ .mat-radio-button {
+    margin-left: 16px;
+}
+
+/*mat-progress-bar {*/
+/*    width: 30%;*/
+/*    align-self: center;*/
+/*    padding: 5px 5px 5px 5px;*/
+/*}*/
+
+mat-divider {
+    width: 70%;
+    align-self: center;
+    padding: 5px 5px 5px 5px;
+}
+
+/*mat-form-field {*/
+/*    padding: 5px 5px 5px 5px;*/
+/*    display: block;*/
+/*    !*width: 30%;*!*/
+/*    align-self: center;*/
+/*}*/

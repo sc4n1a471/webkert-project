@@ -1,0 +1,89 @@
+<div class="offers_minden">
+<!--    <p>offers works!</p>-->
+
+    <h1>Ajánlatkérési formok</h1>
+    <mat-divider></mat-divider>
+
+
+    <h2>Alany információi:</h2>
+
+    <form [formGroup]="form_personal">
+        <mat-form-field appearance="fill">
+            <mat-label>Mióta van meg a jogsi?: </mat-label>
+            <input matInput type="date" formControlName="jogsi_meglet" required/>
+<!--            <mat-error *ngIf="form_personal.get('jogsi_meglet').invalid">{{problem()}}</mat-error>-->
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Hányszor vették el a jogsit?: </mat-label>
+            <input matInput type="number" formControlName="jogsi_elvetelek" required/>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Hány balesetben vett részt?: </mat-label>
+            <input matInput type="number" formControlName="balesetek_szama" required/>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Lakhely városa:</mat-label>
+            <input matInput type="string" formControlName="varos" required/>
+        </mat-form-field>
+    </form>
+
+    <h2>Autó információi:</h2>
+
+    <form [formGroup]="form_car">
+        <mat-form-field appearance="fill">
+            <mat-label>Jármű típusa:</mat-label>
+            <mat-select>
+                <mat-option value="regular_car">Személygépjármű</mat-option>
+                <mat-option value="regular_car">Teherautó</mat-option>
+                <mat-option value="regular_car">Motorkerékpár</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Évjárat:</mat-label>
+            <input matInput type="date" formControlName="year" required/>
+        </mat-form-field>
+
+<!--        <mat-form-field>-->
+<!--            <mat-label>Új / használt?:</mat-label>-->
+<!--            <input matInput type="string" formControlName="condition" />-->
+<!--        </mat-form-field>-->
+
+        <mat-form-field appearance="fill">
+            <mat-label>Érték:</mat-label>
+            <input matInput type="number" formControlName="value" required/>
+            <span matSuffix>Ft</span>
+        </mat-form-field>
+
+        <!--        [(ngModel)]="newOrUsed"-->
+        <mat-radio-group aria-label="Új / használt?" formControlName="condition" required>
+            <mat-radio-button value="new">Új</mat-radio-button>
+            <mat-radio-button value="used">Használt</mat-radio-button>
+        </mat-radio-group>
+        <mat-form-field appearance="fill">
+            <mat-label>Tömeg:</mat-label>
+            <input matInput type="number" formControlName="weight" required/>
+            <span matSuffix>kg</span>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Márka:</mat-label>
+            <input matInput type="string" formControlName="brand" required/>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Modell:</mat-label>
+            <input matInput type="string" formControlName="model" required/>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Teljesítmény:</mat-label>
+            <input matInput type="string" formControlName="performance" required/>
+            <span matSuffix>kW</span>
+        </mat-form-field>
+    </form>
+
+<!--    <mat-progress-bar mode="determinate" value="{{progressBarValue}}"></mat-progress-bar>-->
+    <div>
+        <button mat-raised-button *ngIf="!errorInForm" (click)="request_offers()">Ajánlatkérés beküldése</button>
+        <button mat-raised-button disabled *ngIf="errorInForm" (click)="request_offers()">Ajánlatkérés beküldése</button>
+    </div>
+</div>
+
