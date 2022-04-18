@@ -16,13 +16,17 @@ export class LoginComponent implements OnInit, OnDestroy {
 
   loadingSubscription?: Subscription;
 
+  loading: boolean = false
+
   constructor(private loadingService: AuthService, private router: Router) { }
 
   ngOnInit(): void {
   }
 
   login() {
+      this.loading = true;
       console.log(this.email.value, this.passwd.value)
+      console.log("loading = ", this.loading)
 
       // this.loadingService.loading_test1(this.email.value, this.passwd.value)
       //     .then((data: boolean) => {
@@ -37,9 +41,21 @@ export class LoginComponent implements OnInit, OnDestroy {
       //       })
 
       this.loadingSubscription = this.loadingService.loading_test2(this.email.value, this.passwd.value)
-          .subscribe((data: boolean) => {
-            console.log(data)
-          })
+          .subscribe(
+              {
+                  next: (data: boolean) => {
+                      console.log(data)
+                      this.router.navigateByUrl("/main")
+                      // this.loading = false
+                  }, error: (error) => {
+                      console.error("problem lenni: ", error)
+                      this.loading = false
+                  }, complete: () => {
+                      console.log("finally?")
+                      this.loading = false
+                  }
+              }
+          )
   }
 
   ngOnDestroy() {
