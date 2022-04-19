@@ -11,6 +11,7 @@ import {MatDividerModule} from "@angular/material/divider";
 import {MAT_RADIO_DEFAULT_OPTIONS, MatRadioModule} from "@angular/material/radio";
 import {MatProgressBarModule} from "@angular/material/progress-bar";
 import {MatSelectModule} from "@angular/material/select";
+import {MatCardModule} from "@angular/material/card";
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import {MatSelectModule} from "@angular/material/select";
         MatRadioModule,
         FormsModule,
         MatProgressBarModule,
-        MatSelectModule
+        MatSelectModule,
+        MatCardModule
     ],
     providers: [{
         provide: MAT_RADIO_DEFAULT_OPTIONS,

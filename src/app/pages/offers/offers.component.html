@@ -9,12 +9,12 @@
 
     <form [formGroup]="form_personal">
         <mat-form-field appearance="fill">
-            <mat-label>Mióta van meg a jogsi?: </mat-label>
-            <input matInput type="date" formControlName="jogsi_meglet" required/>
+            <mat-label>Hány teljes éve van jogosítványa?: </mat-label>
+            <input matInput type="number" formControlName="jogsi_meglet" required/>
 <!--            <mat-error *ngIf="form_personal.get('jogsi_meglet').invalid">{{problem()}}</mat-error>-->
         </mat-form-field>
         <mat-form-field appearance="fill">
-            <mat-label>Hányszor vették el a jogsit?: </mat-label>
+            <mat-label>Hányszor vették el ez idő alatt a jogosítványt?: </mat-label>
             <input matInput type="number" formControlName="jogsi_elvetelek" required/>
         </mat-form-field>
         <mat-form-field appearance="fill">
@@ -32,10 +32,10 @@
     <form [formGroup]="form_car">
         <mat-form-field appearance="fill">
             <mat-label>Jármű típusa:</mat-label>
-            <mat-select>
-                <mat-option value="regular_car">Személygépjármű</mat-option>
-                <mat-option value="regular_car">Teherautó</mat-option>
-                <mat-option value="regular_car">Motorkerékpár</mat-option>
+            <mat-select formControlName="type">
+                <mat-option value="car">🚗 Személygépjármű 🚗</mat-option>
+                <mat-option value="truck">🚛 Teherautó 🚛</mat-option>
+                <mat-option value="bike">🏍 Motorkerékpár 🏍</mat-option>
             </mat-select>
         </mat-form-field>
 
@@ -44,10 +44,10 @@
             <input matInput type="date" formControlName="year" required/>
         </mat-form-field>
 
-<!--        <mat-form-field>-->
-<!--            <mat-label>Új / használt?:</mat-label>-->
-<!--            <input matInput type="string" formControlName="condition" />-->
-<!--        </mat-form-field>-->
+        <!--        <mat-form-field>-->
+        <!--            <mat-label>Új / használt?:</mat-label>-->
+        <!--            <input matInput type="string" formControlName="condition" />-->
+        <!--        </mat-form-field>-->
 
         <mat-form-field appearance="fill">
             <mat-label>Érték:</mat-label>
@@ -85,5 +85,38 @@
         <button mat-raised-button *ngIf="!errorInForm" (click)="request_offers()">Ajánlatkérés beküldése</button>
         <button mat-raised-button disabled *ngIf="errorInForm" (click)="request_offers()">Ajánlatkérés beküldése</button>
     </div>
+
+    <div class="cards" *ngIf="offers_ready">
+        <div  *ngFor="let offer of offers;">
+
+<!--        hogy miért kell ez a h1, azt nem tudom, de így működik 👍 -->
+            <h1></h1>
+            <mat-card>
+
+                <mat-card-header>
+                    <mat-card-title>{{offer.nameOfCompany || undefined}}</mat-card-title>
+<!--                    <mat-card-subtitle>alcím?</mat-card-subtitle>-->
+                </mat-card-header>
+
+                <img class="logo" mat-card-md-image src="{{offer.logoOfCompany}}">
+
+                <mat-card-content>
+                    <p>
+                        Éves díj: {{offer.yearly}}
+                    </p>
+<!--                    <h2>Lebontás</h2>-->
+<!--                    <span *ngFor="let fee of offer.fees">-->
+<!--                        Díj: {{offer.fees.teljesitmenyDij}}-->
+<!--                    </span>-->
+                </mat-card-content>
+
+                <mat-card-actions>
+                    <button mat-raised-button>gomb</button>
+                </mat-card-actions>
+
+            </mat-card>
+        </div>
+    </div>
+
 </div>
 
