@@ -101,14 +101,18 @@
                 <img class="logo" mat-card-md-image src="{{offer.logoOfCompany}}" alt="ez lenni logo of insurance company">
 
                 <mat-card-content>
-                    <p>
-                        Éves díj: {{offer.yearly}}
-                    </p>
-                    <h2>Lebontás</h2>
+                    <h1 class="yearly">
+                        Éves díj:
+                        <br>
+                        {{offer.yearly | currency:'Ft': 'symbol': '0.0': 'fr'}}
+                    </h1>
+                    <h2 class="details">Lebontás</h2>
 <!--                    <h2>{{offer.fees}}</h2>-->
-                    <h2 *ngFor="let fee of offer.fees | keyvalue">
-                        {{fee.key}}:{{fee.value}}
-                    </h2>
+                    <p *ngFor="let fee of offer.fees | keyvalue">
+                        {{fee.key | offerCard}}:
+                        <br>
+                        {{fee.value | currency:'Ft': 'symbol': '0.0': 'fr'}}
+                    </p>
 <!--                    <span *ngFor="let fee of offer.fees">-->
 <!--                        Díj: {{fee.teljesitmenyDij}}-->
 <!--                    </span>-->

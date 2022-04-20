@@ -12,11 +12,14 @@ import {MAT_RADIO_DEFAULT_OPTIONS, MatRadioModule} from "@angular/material/radio
 import {MatProgressBarModule} from "@angular/material/progress-bar";
 import {MatSelectModule} from "@angular/material/select";
 import {MatCardModule} from "@angular/material/card";
+import {AppModule} from "../../app.module";
+import {OfferCardPipe} from "../../pipes/offer-card.pipe";
 
 
 @NgModule({
   declarations: [
-    OffersComponent
+      OffersComponent,
+      OfferCardPipe
   ],
     imports: [
         CommonModule,
@@ -30,7 +33,8 @@ import {MatCardModule} from "@angular/material/card";
         FormsModule,
         MatProgressBarModule,
         MatSelectModule,
-        MatCardModule
+        MatCardModule,
+        // AppModule
     ],
     providers: [{
         provide: MAT_RADIO_DEFAULT_OPTIONS,

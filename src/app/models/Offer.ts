@@ -6,7 +6,16 @@ export class Offer {
     constructor(fees: Offer_fees, n: string, l: string) {
         this.nameOfCompany = n;
         this.logoOfCompany = l;
-        this.yearly = fees.sum;
+        this.yearly = (
+            fees.balesetesDij +
+            fees.elvetelesDij +
+            fees.megletesDij +
+            fees.carTypeDij +
+            fees.sulyDij +
+            fees.ertekDij +
+            fees.korDij +
+            fees.teljesitmenyDij
+        );
         this.fees = fees;
         // console.log(this.fees)
     }
@@ -25,7 +34,7 @@ export class Offer_fees {
     korDij: number;
     teljesitmenyDij: number;
 
-    sum: number;
+    // sum: number;
 
     constructor(
         balesetesDij: number,
@@ -45,16 +54,16 @@ export class Offer_fees {
         this.korDij = korDij;
         this.teljesitmenyDij = teljesitmenyDij;
 
-        this.sum = (
-            this.balesetesDij +
-            this.elvetelesDij +
-            this.megletesDij +
-            this.carTypeDij +
-            this.sulyDij +
-            this.ertekDij +
-            this.korDij +
-            this.teljesitmenyDij
-        )
+        // this.sum = (
+        //     this.balesetesDij +
+        //     this.elvetelesDij +
+        //     this.megletesDij +
+        //     this.carTypeDij +
+        //     this.sulyDij +
+        //     this.ertekDij +
+        //     this.korDij +
+        //     this.teljesitmenyDij
+        // )
     }
 
 }

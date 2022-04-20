@@ -18,15 +18,17 @@ import {MatButtonModule} from "@angular/material/button";
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatInputModule} from "@angular/material/input";
 import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
+import { OfferCardPipe } from './pipes/offer-card.pipe';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    MainComponent,
-    LoginComponent,
-    RegisterComponent,
-    MenuComponent
-  ],
+    declarations: [
+        AppComponent,
+        MainComponent,
+        LoginComponent,
+        RegisterComponent,
+        MenuComponent
+        // OfferCardPipe
+    ],
     imports: [
         BrowserModule,
         AppRoutingModule,
@@ -42,7 +44,7 @@ import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
         MatInputModule,
         MatProgressSpinnerModule
     ],
-  providers: [],
-  bootstrap: [AppComponent]
+    providers: [],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }
