@@ -125,37 +125,38 @@ export class OffersComponent implements OnInit {
     }
 
     this.fees1 = new Offer_fees(
-        (personal.balesetek_szama * this.feeMultipliers1[0]),
-        (personal.jogsi_elvetelek * this.feeMultipliers1[1]),
-        ((1 / personal.jogsi_meglet) * this.feeMultipliers1[2]),
-        typeFee,
-        (car.weight * this.feeMultipliers1[3]),
-        ((car.value / this.feeMultipliers1[4]) * 2),
-        ageFee,
-        (car.performance * this.feeMultipliers1[5])
+        Math.ceil(personal.balesetek_szama * this.feeMultipliers1[0]),
+        Math.ceil(personal.jogsi_elvetelek * this.feeMultipliers1[1]),
+        Math.ceil((1 / personal.jogsi_meglet) * this.feeMultipliers1[2]),
+        Math.ceil(typeFee),
+        Math.ceil(car.weight * this.feeMultipliers1[3]),
+        Math.ceil((car.value / this.feeMultipliers1[4]) * 2),
+        Math.ceil(ageFee),
+        Math.ceil(car.performance * this.feeMultipliers1[5])
     )
     this.fees2 = new Offer_fees(
-        (personal.balesetek_szama * this.feeMultipliers2[0]),
-        (personal.jogsi_elvetelek * this.feeMultipliers2[1]),
-        ((1 / personal.jogsi_meglet) * this.feeMultipliers2[2]),
-        typeFee,
-        (car.weight * this.feeMultipliers2[3]),
-        ((car.value / this.feeMultipliers2[4]) * 2),
-        ageFee,
-        (car.performance * this.feeMultipliers2[5])
+        Math.ceil(personal.balesetek_szama * this.feeMultipliers2[0]),
+        Math.ceil(personal.jogsi_elvetelek * this.feeMultipliers2[1]),
+        Math.ceil((1 / personal.jogsi_meglet) * this.feeMultipliers2[2]),
+        Math.ceil(typeFee),
+        Math.ceil(car.weight * this.feeMultipliers2[3]),
+        Math.ceil((car.value / this.feeMultipliers2[4]) * 2),
+        Math.ceil(ageFee),
+        Math.ceil(car.performance * this.feeMultipliers2[5])
     )
     this.fees3 = new Offer_fees(
-        (personal.balesetek_szama * this.feeMultipliers3[0]),
-        (personal.jogsi_elvetelek * this.feeMultipliers3[1]),
-        ((1 / personal.jogsi_meglet) * this.feeMultipliers3[2]),
-        typeFee,
-        (car.weight * this.feeMultipliers3[3]),
-        ((car.value / this.feeMultipliers3[4]) * 2),
-        ageFee,
-        (car.performance * this.feeMultipliers3[5])
+        Math.ceil(personal.balesetek_szama * this.feeMultipliers3[0]),
+        Math.ceil(personal.jogsi_elvetelek * this.feeMultipliers3[1]),
+        Math.ceil((1 / personal.jogsi_meglet) * this.feeMultipliers3[2]),
+        Math.ceil(typeFee),
+        Math.ceil(car.weight * this.feeMultipliers3[3]),
+        Math.ceil((car.value / this.feeMultipliers3[4]) * 2),
+        Math.ceil(ageFee),
+        Math.ceil(car.performance * this.feeMultipliers3[5])
     )
 
     this.fees = [this.fees1, this.fees2, this.fees3]
+    // this.fees = [this.fees3]
 
     // return Math.ceil(dij);
   }

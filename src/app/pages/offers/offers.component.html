@@ -98,15 +98,19 @@
 <!--                    <mat-card-subtitle>alcím?</mat-card-subtitle>-->
                 </mat-card-header>
 
-                <img class="logo" mat-card-md-image src="{{offer.logoOfCompany}}">
+                <img class="logo" mat-card-md-image src="{{offer.logoOfCompany}}" alt="ez lenni logo of insurance company">
 
                 <mat-card-content>
                     <p>
                         Éves díj: {{offer.yearly}}
                     </p>
-<!--                    <h2>Lebontás</h2>-->
+                    <h2>Lebontás</h2>
+<!--                    <h2>{{offer.fees}}</h2>-->
+                    <h2 *ngFor="let fee of offer.fees | keyvalue">
+                        {{fee.key}}:{{fee.value}}
+                    </h2>
 <!--                    <span *ngFor="let fee of offer.fees">-->
-<!--                        Díj: {{offer.fees.teljesitmenyDij}}-->
+<!--                        Díj: {{fee.teljesitmenyDij}}-->
 <!--                    </span>-->
                 </mat-card-content>
 

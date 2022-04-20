@@ -8,6 +8,7 @@ export class Offer {
         this.logoOfCompany = l;
         this.yearly = fees.sum;
         this.fees = fees;
+        // console.log(this.fees)
     }
 
     fees: Offer_fees;
