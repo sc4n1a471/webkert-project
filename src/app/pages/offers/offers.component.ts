@@ -176,4 +176,9 @@ export class OffersComponent implements OnInit {
     //     console.log(this.errorInForm)
     //   }
     // }
+
+    choose(offer: Offer) {
+        console.log(offer)
+    }
+
 }
