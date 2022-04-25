@@ -5,12 +5,13 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class OfferCardPipe implements PipeTransform {
 
+    // kicseréli az Offer class adattagjainak neveit normálisabbakra
     transform(value: unknown, ...args: unknown[]): unknown {
         if (!value) {
             return "nope"
         } else {
-            let he = value as string
-            switch (he) {
+            let adattagNeve = value as string
+            switch (adattagNeve) {
                 case "balesetesDij": {
                     return "Balesetek"
                 }
