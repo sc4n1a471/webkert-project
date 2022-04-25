@@ -7,4 +7,5 @@ Ez lenni repository for webkert-project
 - [Coospace](https://www.coosp.etr.u-szeged.hu/Scene-675909)
 - [Angular Docs 1](https://angular.io/docs)
 - [Angular Docs 2](https://devdocs.io/angular/)
+- [Material docs](https://material.angular.io/components/categories)
 - [Playlist](https://www.youtube.com/watch?v=fk9bF3w6GGI&list=PLUErynknWn5Xp8N0zQjwQPKNNRUsyvnfH&index=1)
