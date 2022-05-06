@@ -3,3 +3,9 @@
 /.angular
 .DS_Store
 .idea
+src/environments
+
+# Firebase
+.firebase
+*-debug.log
+.runtimeconfig.json

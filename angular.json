@@ -100,6 +100,16 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "webkert-project:build:production",
+            "firebaseProject": "webkert-project-sc4n1a",
+            "firebaseHostingSite": "webkert-project-sc4n1a"
+          }
         }
       }
     }
