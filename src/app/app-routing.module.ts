@@ -28,6 +28,8 @@ const routes: Routes = [
   { path: 'contact', loadChildren: () => import('./pages/contact/contact.module').then(m => m.ContactModule) },
   { path: 'aboutus', loadChildren: () => import('./pages/aboutus/aboutus.module').then(m => m.AboutusModule) },
   { path: 'offers', loadChildren: () => import('./pages/offers/offers.module').then(m => m.OffersModule), canActivate: [AuthGuard]},
+  { path: 'my-contracts', loadChildren: () => import('./pages/my-contracts/my-contracts.module').then(m => m.MyContractsModule) },
+  { path: 'my-profile', loadChildren: () => import('./pages/my-profile/my-profile.module').then(m => m.MyProfileModule) },
   {
     path: '**',
     redirectTo: 'not-found'

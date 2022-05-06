@@ -20,10 +20,18 @@
     </a>
     <a *ngIf="isLoggedIn" mat-list-item routerLink="/offers" (click)="close()">
         <mat-icon>local_offer</mat-icon>
-        <span>Offers</span>
+        <span>New Offers</span>
+    </a>
+    <a *ngIf="isLoggedIn" mat-list-item routerLink="/my-contracts" (click)="close()">
+        <mat-icon>assignment</mat-icon>
+        <span>My Contracts</span>
+    </a>
+    <a *ngIf="isLoggedIn" mat-list-item routerLink="/my-profile" (click)="close()">
+        <mat-icon>account_circle</mat-icon>
+        <span>My Profile</span>
     </a>
     <a mat-list-item routerLink="/contact" (click)="close()">
-        <mat-icon>contact_page</mat-icon>
+        <mat-icon>info</mat-icon>
         <span>Contact Us</span>
     </a>
     <a *ngIf="isLoggedIn" mat-list-item routerLink="/main" (click)="close(true)">
