@@ -40,22 +40,32 @@ export class LoginComponent implements OnInit, OnDestroy {
       //           console.log("finallyyyy")
       //       })
 
-      this.loadingSubscription = this.loadingService.loading_test2(this.email.value, this.passwd.value)
-          .subscribe(
-              {
-                  next: (data: boolean) => {
-                      console.log(data)
-                      this.router.navigateByUrl("/main")
-                      // this.loading = false
-                  }, error: (error) => {
-                      console.error("problem lenni: ", error)
-                      this.loading = false
-                  }, complete: () => {
-                      console.log("finally?")
-                      this.loading = false
-                  }
-              }
-          )
+      // this.loadingSubscription = this.loadingService.loading_test2(this.email.value, this.passwd.value)
+      //     .subscribe(
+      //         {
+      //             next: (data: boolean) => {
+      //                 console.log(data)
+      //                 this.router.navigateByUrl("/main")
+      //                 // this.loading = false
+      //             }, error: (error) => {
+      //                 console.error("problem lenni: ", error)
+      //                 this.loading = false
+      //             }, complete: () => {
+      //                 console.log("finally?")
+      //                 this.loading = false
+      //             }
+      //         }
+      //     )
+
+      this.loadingService.normal_login(this.email.value, this.passwd.value)
+          .then(credentials => {
+              console.log("Credentials: ", credentials)
+              this.router.navigateByUrl("/main")
+              this.loading = false
+          })
+          .catch(error => {
+              console.error(error)
+      })
   }
 
   ngOnDestroy() {

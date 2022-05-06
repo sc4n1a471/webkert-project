@@ -2,6 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {NavigationEnd, Router} from "@angular/router";
 import {filter} from "rxjs";
 import {MatSidenav} from "@angular/material/sidenav";
+import {AngularFireAuth} from "@angular/fire/compat/auth";
+import {AuthService} from "./services/auth.service";
 
 @Component({
   selector: 'app-root',
@@ -14,6 +16,7 @@ export class AppComponent implements OnInit {
   // openedPage = 'main'
   openedPage = '' // ezzel ha reloadolunk egy oldalt, akkor nem látszódik a main->url átugrás
 
+  loggedInUser?: firebase.default.User | null;
 
   // router: Router
   // constructor(router: Router) {
@@ -22,7 +25,7 @@ export class AppComponent implements OnInit {
   // ====== megegyezik
   // constructor(private router: Router) {
   // }
-  constructor(private router: Router) {}
+  constructor(private router: Router, private loadingService: AuthService) {}
 
 
   changingPage(selectedPage: string) {
@@ -41,6 +44,12 @@ export class AppComponent implements OnInit {
           this.openedPage = (esemenyek.urlAfterRedirects as string).split('/')[1];
           /* console.log(this.openedPage); -- url levágva normálisan */
         })
+
+    this.loadingService.isLoggedIn().subscribe(user => {
+      this.loggedInUser = user
+    }, error => {
+      console.error(error)
+    })
   }
 
   toggleSidenav(sidenav: MatSidenav) {

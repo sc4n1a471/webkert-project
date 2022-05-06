@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup} from "@angular/forms";
+import {AuthService} from "../../services/auth.service";
 
 @Component({
   selector: 'app-register',
@@ -17,12 +18,19 @@ export class RegisterComponent implements OnInit {
     birthday: new FormControl('')
   })
 
-  constructor() { }
+  constructor(private loadingService: AuthService) { }
 
   ngOnInit(): void {
   }
 
   register() {
     console.log(this.registerForm.value.fn)
+    this.loadingService.normal_signup(this.registerForm.get('email')?.value, this.registerForm.get('passwd')?.value)
+        .then(credentials => {
+          console.log("Sign up credentials: ", credentials)
+        })
+        .catch(error => {
+          console.error(error)
+        })
   }
 }

@@ -1,4 +1,5 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {AuthService} from "../../services/auth.service";
 
 @Component({
   selector: 'app-menu',
@@ -8,10 +9,11 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 export class MenuComponent implements OnInit {
 
   @Input() currentPage: string = ''
+  @Input() isLoggedIn?: firebase.default.User | null;
   @Output() selectedPage = new EventEmitter()
   @Output() onCloseSidenav: EventEmitter<boolean> = new EventEmitter()
 
-  constructor() { }
+  constructor(private loadingService: AuthService) { }
 
   ngOnInit(): void {
   }
@@ -20,7 +22,18 @@ export class MenuComponent implements OnInit {
     this.selectedPage.emit(this.currentPage)
   }
 
-  close() {
+  close(loggingOut?: boolean) {
     this.onCloseSidenav.emit(true)
+    if (loggingOut) {
+      this.logout()
+    }
+  }
+
+  logout() {
+    this.loadingService.normal_logout().then(() => {
+      console.log("Succesful logout!")
+    }).catch(error => {
+      console.error(error)
+    })
   }
 }

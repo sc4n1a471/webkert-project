@@ -2,8 +2,9 @@
     <mat-sidenav #sidenav>
         <app-menu
                 (selectedPage)="changingPage($event)"
-                [currentPage]="openedPage"
                 (onCloseSidenav)="onCloseSidenav($event, sidenav)"
+                [currentPage]="openedPage"
+                [isLoggedIn]="loggedInUser"
         ></app-menu>
     </mat-sidenav>
     <mat-sidenav-content class="he">
