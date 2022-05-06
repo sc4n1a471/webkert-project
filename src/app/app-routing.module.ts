@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import {AuthGuard} from "./services/auth.guard";
 
 const routes: Routes = [
   {
@@ -21,12 +22,12 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: '/main',
+    redirectTo: '/login',
     pathMatch: 'full'
   },
   { path: 'contact', loadChildren: () => import('./pages/contact/contact.module').then(m => m.ContactModule) },
   { path: 'aboutus', loadChildren: () => import('./pages/aboutus/aboutus.module').then(m => m.AboutusModule) },
-  { path: 'offers', loadChildren: () => import('./pages/offers/offers.module').then(m => m.OffersModule) },
+  { path: 'offers', loadChildren: () => import('./pages/offers/offers.module').then(m => m.OffersModule), canActivate: [AuthGuard]},
   {
     path: '**',
     redirectTo: 'not-found'
