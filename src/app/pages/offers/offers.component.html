@@ -84,6 +84,7 @@
     <div>
         <button mat-raised-button *ngIf="!errorInForm" (click)="request_offers()">Ajánlatkérés beküldése</button>
         <button mat-raised-button disabled *ngIf="errorInForm" (click)="request_offers()">Ajánlatkérés beküldése</button>
+        <button mat-raised-button (click)="testRequest()">Test Kiválaszt</button>
     </div>
 
     <div class="cards" *ngIf="offers_ready">

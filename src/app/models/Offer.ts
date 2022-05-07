@@ -1,3 +1,10 @@
+export interface Contract {
+    id: string;
+    date: number;
+    userId: string;
+    offer: Offer;
+}
+
 export class Offer {
     yearly: number;
     nameOfCompany: string;
@@ -17,9 +24,7 @@ export class Offer {
             fees.teljesitmenyDij
         );
         this.fees = fees;
-        // console.log(this.fees)
     }
-
     fees: Offer_fees;
 }
 
@@ -33,8 +38,6 @@ export class Offer_fees {
     ertekDij: number;
     korDij: number;
     teljesitmenyDij: number;
-
-    // sum: number;
 
     constructor(
         balesetesDij: number,
@@ -53,17 +56,5 @@ export class Offer_fees {
         this.ertekDij = ertekDij;
         this.korDij = korDij;
         this.teljesitmenyDij = teljesitmenyDij;
-
-        // this.sum = (
-        //     this.balesetesDij +
-        //     this.elvetelesDij +
-        //     this.megletesDij +
-        //     this.carTypeDij +
-        //     this.sulyDij +
-        //     this.ertekDij +
-        //     this.korDij +
-        //     this.teljesitmenyDij
-        // )
     }
-
 }

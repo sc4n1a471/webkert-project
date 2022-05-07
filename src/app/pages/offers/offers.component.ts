@@ -1,8 +1,11 @@
 import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
-import {Offer, Offer_fees} from "../../models/Offer";
+import {Contract, Offer, Offer_fees} from "../../models/Offer";
 import { registerLocaleData } from '@angular/common';
 import localeFr from '@angular/common/locales/fr';
+import {ContractService} from "../../services/contract.service";
+import {User} from "../../models/User";
+import {UserService} from "../../services/user.service";
 registerLocaleData(localeFr, 'fr');
 
 @Component({
@@ -46,9 +49,19 @@ export class OffersComponent implements OnInit {
     feeMultipliers3 = [19000, 39000, 29000, 9, 900, 90]
     fees: Array<Offer_fees> = [];
 
-    constructor() { }
+    // contract!: Contract;
+    user?: User;
+
+    constructor(private offerService: ContractService, private userService: UserService) { }
 
     ngOnInit(): void {
+        const user = JSON.parse(localStorage.getItem('user') as string) as firebase.default.User;
+        this.userService.getUserById(user.uid).subscribe(data => {
+            this.user = data;
+            // this.contract.userId = <string>this.user?.id
+        }, error => {
+            console.error("offers.ts - ngOnInit - userService.getUserById error: ", error)
+        })
     }
 
     request_offers() {
@@ -177,8 +190,41 @@ export class OffersComponent implements OnInit {
     //   }
     // }
 
-    choose(offer: Offer) {
-        console.log(offer)
+    testRequest() {
+        let personal = this.form_personal.value
+        let car = this.form_car.value
+
+        personal.jogsi_meglet = 3
+        personal.jogsi_elvetelek = 0
+        personal.balesetek_szama = 0
+
+        car.type = 'car'
+        car.year = '2021-01-01'
+        car.condition = 'new'
+        car.value = 20000000
+        car.weight = 1800
+        car.performance = 300
+
+        this.request_offers()
     }
 
+    choose(offer: Offer) {
+        // contract.userId = <string>this.user?.id
+        console.log("User chose an offer")
+        console.log("Offer: ", offer)
+        // console.log("Current contract: ", contract)
+        if (offer) {
+            let contract: Contract = {
+                id: '',
+                date: new Date().getDate(),
+                userId: <string>this.user?.id,
+                offer: offer
+            };
+            // this.contract.date = new Date().getDate()
+            // this.contract.offer = offer
+            // this.contract.userId =
+            this.offerService.createOffer(contract)
+        }
+
+    }
 }

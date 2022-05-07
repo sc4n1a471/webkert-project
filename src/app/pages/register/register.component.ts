@@ -28,10 +28,14 @@ export class RegisterComponent implements OnInit {
   }
 
   register() {
+
     console.log(this.registerForm.value.fn)
+
     this.loadingService.normal_signup(this.registerForm.get('email')?.value, this.registerForm.get('passwd')?.value)
         .then(credentials => {
+
           console.log("Sign up credentials: ", credentials)
+
           const userCuccli: User = {
             id: credentials.user?.uid as string,
             email: this.registerForm.get('email')?.value,
@@ -40,6 +44,7 @@ export class RegisterComponent implements OnInit {
             lastname: this.registerForm.get('ln')?.value,
             birtday: this.registerForm.get('birthday')?.value
           };
+
           this.userService.createUser(userCuccli).then(_ => {
             console.log("Succesful user insert")
           }).catch(_ => {

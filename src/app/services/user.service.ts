@@ -17,4 +17,11 @@ export class UserService {
         .doc(newUser.id)
         .set(newUser)   // mit töltünk fel
   }
+
+  getUserById(id: string) {
+    return this.angularFirestore
+        .collection<User>(this.collectionName)
+        .doc(id)
+        .valueChanges();
+  }
 }
