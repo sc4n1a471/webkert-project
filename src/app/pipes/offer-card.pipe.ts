@@ -22,7 +22,7 @@ export class OfferCardPipe implements PipeTransform {
                     return "Jogsi kora"
                 }
                 case "carTypeDij": {
-                    return "Jármű típúsa"
+                    return "Jármű típusa"
                 }
                 case "sulyDij": {
                     return "Jármú súlya"

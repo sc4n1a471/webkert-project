@@ -3,7 +3,8 @@
     flex-direction: column;
     justify-content: center;
     text-align: center;
-    height: 100vh;
+    height: 80%;
+    /*margin: 20px 5px 5px 5px;*/
 }
 
 mat-form-field {

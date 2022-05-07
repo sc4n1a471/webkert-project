@@ -1,0 +1,33 @@
+.myContracts_minden {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    height: 100vh;
+}
+
+h1 {
+    padding-bottom: 50px;
+    font-size: xx-large;
+}
+
+.logo {
+    width: 30%;
+    height: 100%;
+    align-self: center;
+}
+
+mat-table {
+    width: 80%;
+    align-self: center;
+    padding: 5px 5px 5px 5px
+}
+
+mat-expansion-panel {
+    margin: 5px 5px 5px 5px
+}
+
+button {
+    margin-left: auto;
+    display: block;
+}

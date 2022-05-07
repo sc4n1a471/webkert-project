@@ -17,10 +17,10 @@ import {OfferCardPipe} from "../../pipes/offer-card.pipe";
 
 
 @NgModule({
-  declarations: [
-      OffersComponent,
-      OfferCardPipe
-  ],
+    declarations: [
+        OffersComponent,
+        OfferCardPipe
+    ],
     imports: [
         CommonModule,
         OffersRoutingModule,
@@ -36,9 +36,12 @@ import {OfferCardPipe} from "../../pipes/offer-card.pipe";
         MatCardModule,
         // AppModule
     ],
+    exports: [
+        OfferCardPipe
+    ],
     providers: [{
         provide: MAT_RADIO_DEFAULT_OPTIONS,
-        useValue: { color: 'primary' },
+        useValue: {color: 'primary'},
     }]
 })
 export class OffersModule { }
