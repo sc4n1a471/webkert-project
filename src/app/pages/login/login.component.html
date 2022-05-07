@@ -8,24 +8,30 @@
 </span>
 
 <div class="login_component">
-    <mat-form-field>
-        <mat-label>Email: </mat-label>
-        <input matInput type="text" [formControl]="email">
-    </mat-form-field>
-<!--    <span>-->
-<!--        <label>Email: </label>-->
-<!--        <input type="text" [formControl]="email" />-->
-<!--    </span>-->
-<!--    <span>-->
-<!--        <label>Password: </label>-->
-<!--        <input type="password" [formControl]="passwd" />-->
-<!--    </span>-->
-    <mat-form-field>
-        <mat-label>Password: </mat-label>
-        <input matInput type="password" [formControl]="passwd">
-    </mat-form-field>
-    <span>
+    <mat-card>
+        <h1>Bejelentkezés</h1>
+        <mat-form-field>
+            <mat-label>Email: </mat-label>
+            <input matInput type="text" [formControl]="email">
+        </mat-form-field>
+        <br>
+        <!--    <span>-->
+        <!--        <label>Email: </label>-->
+        <!--        <input type="text" [formControl]="email" />-->
+        <!--    </span>-->
+        <!--    <span>-->
+        <!--        <label>Password: </label>-->
+        <!--        <input type="password" [formControl]="passwd" />-->
+        <!--    </span>-->
+        <mat-form-field>
+            <mat-label>Password: </mat-label>
+            <input matInput type="password" [formControl]="passwd">
+        </mat-form-field>
+        <br>
+        <span>
         <button mat-raised-button (click)="login()">Login</button>
         <button mat-raised-button [routerLink]="'/register'">Sign Up</button>
     </span>
+    </mat-card>
+
 </div>
