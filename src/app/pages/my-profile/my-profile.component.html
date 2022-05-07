@@ -1,8 +1,28 @@
-<div class="offers_minden">
+<span *ngIf="loading">
+    <div class="overlay"></div>
+    <span class="spinner">
+        <mat-spinner></mat-spinner>
+    </span>
+</span>
+
+<div class="myProfile_minden">
 <!--    <p>my-profile works!</p>-->
-    <h1>Profilom</h1>
-<!--    <div  *ngFor="let userData of User;">-->
+    <mat-card>
+        <h1>Profilom</h1>
+        <div class="info" *ngFor="let info of userInfo | keyvalue;">
+            {{info.key | myProfile}}:
+            {{info.value}}
+            <mat-divider></mat-divider>
+        </div>
 
+        <div class="changeEmail">
+            <mat-form-field appearance="fill">
+                <mat-label>Email cím módosítása: </mat-label>
+                <input matInput type="email" [formControl]="newEmail" required/>
+            </mat-form-field>
+            <br>
+            <button mat-raised-button color="primary" (click)="updateEmail()">Email cím módosítása</button>
+        </div>
+    </mat-card>
 
-<!--    </div>-->
 </div>

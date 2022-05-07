@@ -9,6 +9,7 @@ import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
 import {MatButtonModule} from "@angular/material/button";
 import {MatExpansionModule} from "@angular/material/expansion";
 import {OffersModule} from "../offers/offers.module";
+import {MatCardModule} from "@angular/material/card";
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import {OffersModule} from "../offers/offers.module";
         MatProgressSpinnerModule,
         MatButtonModule,
         MatExpansionModule,
-        OffersModule
+        OffersModule,
+        MatCardModule
     ]
 })
 export class MyContractsModule { }

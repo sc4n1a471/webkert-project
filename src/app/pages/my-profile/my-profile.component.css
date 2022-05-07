@@ -1,4 +1,4 @@
-.myContracts_minden {
+.myProfile_minden {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -10,3 +10,33 @@ h1 {
     padding-bottom: 50px;
     font-size: xx-large;
 }
+
+mat-divider {
+    width: 100%;
+
+    align-self: center;
+    align-content: center;
+    display: block;
+}
+
+.changeEmail {
+    padding: 50px 5px 5px 5px;
+    display: block;
+    /*width: 30%;*/
+    align-self: center;
+}
+
+.info {
+    font-size: medium;
+    /*width: 70%;*/
+    align-self: center;
+    align-content: center;
+    padding: 5px 5px 5px 5px;
+}
+
+mat-card {
+    width: 60%;
+    align-self: center;
+    align-content: center;
+}
+

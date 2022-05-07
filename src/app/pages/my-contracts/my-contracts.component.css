@@ -1,9 +1,9 @@
 .myContracts_minden {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    /*justify-content: center;*/
     text-align: center;
-    height: 100vh;
+    height: 2160px;
 }
 
 h1 {
@@ -18,9 +18,15 @@ h1 {
 }
 
 mat-table {
-    width: 80%;
-    align-self: center;
+    /*width: 80%;*/
+
     padding: 5px 5px 5px 5px
+}
+
+mat-card {
+    width: 70%;
+    align-self: center;
+    margin: 50px 50px 50px 50px
 }
 
 mat-expansion-panel {
