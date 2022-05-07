@@ -216,13 +216,14 @@ export class OffersComponent implements OnInit {
         if (offer) {
             let contract: Contract = {
                 id: '',
-                date: new Date().getDate(),
+                date: new Date().toISOString().split('T')[0],
                 userId: <string>this.user?.id,
                 offer: offer
             };
             // this.contract.date = new Date().getDate()
             // this.contract.offer = offer
             // this.contract.userId =
+            console.log("Contract: ", contract)
             this.offerService.createOffer(contract)
         }
 

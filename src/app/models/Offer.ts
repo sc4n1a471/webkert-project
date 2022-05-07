@@ -1,6 +1,6 @@
 export interface Contract {
     id: string;
-    date: number;
+    date: string;
     userId: string;
     offer: Offer;
 }

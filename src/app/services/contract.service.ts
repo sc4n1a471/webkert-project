@@ -7,7 +7,7 @@
 })
 export class ContractService {
 
-  collectionName = 'Offers'
+  collectionName = 'Contracts'
 
   constructor(private angularFirestore: AngularFirestore) { }
 
@@ -18,6 +18,8 @@ export class ContractService {
     return this.angularFirestore
         .collection<Contract>(this.collectionName)
         .doc(newContract.id)
-        .set(newContract)
+        .set(JSON.parse( JSON.stringify(newContract)));
+    // for some reason, csak így fogadja el a firestore a custom object típust 🤷‍
   }
+
 }
