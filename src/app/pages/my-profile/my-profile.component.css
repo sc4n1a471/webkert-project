@@ -1,0 +1,12 @@
+.offers_minden {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    height: 100vh;
+}
+
+h1 {
+    padding-bottom: 50px;
+    font-size: xx-large;
+}

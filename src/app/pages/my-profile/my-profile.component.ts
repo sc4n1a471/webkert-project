@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {User} from "../../models/User";
 
 @Component({
   selector: 'app-my-profile',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./my-profile.component.css']
 })
 export class MyProfileComponent implements OnInit {
+
+  @Input() userInfo!: User;
 
   constructor() { }
 
