@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "webkert-project-sc4n1a": {
+      "hosting": {
+        "webkert-project": [
+          "webkert-project-sc4n1a"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "webkert-project-sc4n1a"
+  }
+}
