@@ -71,6 +71,8 @@ export class LoginComponent implements OnInit, OnDestroy {
             })
             .catch(error => {
                 console.error(error)
+                this.loading = false
+                this.openSnackBar("Sikertelen bejelentkezés!");
             })
     }
 
@@ -83,5 +85,11 @@ export class LoginComponent implements OnInit, OnDestroy {
         this._snackBar.open(message, "Bezár", {
             duration: 3000
         });
+    }
+
+    entered(event: any) {
+        if (event.keyCode === 13) {
+            this.login()
+        }
     }
 }

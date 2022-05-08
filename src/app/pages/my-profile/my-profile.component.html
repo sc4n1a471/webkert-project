@@ -18,7 +18,7 @@
         <div class="changeEmail">
             <mat-form-field appearance="fill">
                 <mat-label>Felhasználónév módosítása: </mat-label>
-                <input matInput type="text" [formControl]="newUsername" required/>
+                <input matInput type="text" [formControl]="newUsername" required (keyup)="entered($event)"/>
             </mat-form-field>
             <br>
             <button mat-raised-button color="primary" (click)="updateUsername()">Módosítás</button>

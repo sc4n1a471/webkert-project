@@ -49,4 +49,9 @@ export class MyProfileComponent implements OnInit {
         });
     }
 
+    entered(event: any) {
+        if (event.keyCode === 13) {
+            this.updateUsername()
+        }
+    }
 }

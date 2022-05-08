@@ -12,7 +12,7 @@
         <h1>Bejelentkezés</h1>
         <mat-form-field>
             <mat-label>Email: </mat-label>
-            <input matInput type="text" [formControl]="email">
+            <input matInput type="text" [formControl]="email" (keyup)="entered($event)">
         </mat-form-field>
         <br>
         <!--    <span>-->
@@ -25,7 +25,7 @@
         <!--    </span>-->
         <mat-form-field>
             <mat-label>Password: </mat-label>
-            <input matInput type="password" [formControl]="passwd">
+            <input matInput type="password" [formControl]="passwd" (keyup)="entered($event)">
         </mat-form-field>
         <br>
         <span>
