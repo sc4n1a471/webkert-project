@@ -2,6 +2,7 @@ export interface Contract {
     id: string;
     date: string;
     userId: string;
+    license_plate: string;
     offer: Offer;
 }
 

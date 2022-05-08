@@ -13,7 +13,7 @@ export class MyContractsComponent implements OnInit {
     loading: boolean = false
 
     myContracts: any;
-    displayedColumns = ['id', 'date', 'yearly', 'logoOfCompany', 'other', 'actions'];
+    displayedColumns = ['license_plate', 'date', 'yearly', 'logoOfCompany', 'other', 'actions'];
 
     panelOpenState = false;
 

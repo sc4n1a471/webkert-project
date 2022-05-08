@@ -43,19 +43,11 @@
                 <mat-label>Évjárat:</mat-label>
                 <input matInput type="date" formControlName="year" required/>
             </mat-form-field>
-
-            <!--        <mat-form-field>-->
-            <!--            <mat-label>Új / használt?:</mat-label>-->
-            <!--            <input matInput type="string" formControlName="condition" />-->
-            <!--        </mat-form-field>-->
-
             <mat-form-field appearance="fill">
                 <mat-label>Érték:</mat-label>
                 <input matInput type="number" formControlName="value" required/>
                 <span matSuffix>Ft</span>
             </mat-form-field>
-
-            <!--        [(ngModel)]="newOrUsed"-->
             <mat-radio-group aria-label="Új / használt?" formControlName="condition" required>
                 <mat-radio-button value="new">Új</mat-radio-button>
                 <mat-radio-button value="used">Használt</mat-radio-button>
@@ -70,24 +62,41 @@
                 <input matInput type="string" formControlName="brand" required/>
             </mat-form-field>
             <mat-form-field appearance="fill">
-                <mat-label>Modell:</mat-label>
-                <input matInput type="string" formControlName="model" required/>
+                <mat-label>Rendszám:</mat-label>
+                <input matInput type="string" formControlName="license_plate" required/>
             </mat-form-field>
             <mat-form-field appearance="fill">
                 <mat-label>Teljesítmény:</mat-label>
                 <input matInput type="string" formControlName="performance" required/>
                 <span matSuffix>kW</span>
             </mat-form-field>
+<!--            <mat-form-field appearance="fill">-->
+<!--                <mat-label>Rendszám:</mat-label>-->
+<!--                <input matInput type="string" formControlName="license_plate" required/>-->
+<!--            </mat-form-field>-->
+
         </form>
 
-        <!--    <mat-progress-bar mode="determinate" value="{{progressBarValue}}"></mat-progress-bar>-->
         <div class="buttons">
-            <button mat-raised-button *ngIf="!errorInForm" (click)="request_offers()">Ajánlatkérés beküldése</button>
-            <button mat-raised-button disabled *ngIf="errorInForm" (click)="request_offers()">Ajánlatkérés beküldése</button>
+            <button mat-raised-button color="primary" (click)="request_offers()">Ajánlatkérés beküldése</button>
             <button mat-raised-button (click)="testRequest()">Test Kiválaszt</button>
 
         </div>
-    <mat-divider></mat-divider>
+        <mat-divider></mat-divider>
+
+        <p class="szer_feltet"><strong>Szerződési feltételek</strong></p>
+        <mat-list>
+            <mat-list-item>- Ajánlat kiválasztásával elfogadja a szerződési feltételekben foglaltakat!</mat-list-item>
+            <mat-list-item>- Cégünk fenntartja a jogot ármódosításra</mat-list-item>
+            <mat-list-item>- Az alábbi érvényes igazolbányokkal kell rendelkeznie</mat-list-item>
+            <mat-list-item>------ Jogosítvány</mat-list-item>
+            <mat-list-item>------ Személyi igazolvány</mat-list-item>
+            <mat-list-item>------ Lakcím kártya</mat-list-item>
+            <mat-list-item>- Szerződéskötést követő 14 munkanapon belül jogunkban áll bármilyen indok nélkül árváltozást, szerződéskötés meghiúsítást végrehajtani</mat-list-item>
+            <mat-list-item>- Cégünk még mindig nem alkalmaz jogi alkalmazottakat, ügyvédeket 👨‍⚖️, könyvelőket, így  💨-ja sincs , miket kellene a szerződési feltételekbe írnia 🤷‍♂️😞</mat-list-item>
+        </mat-list>
+
+        <mat-divider></mat-divider>
 
         <div class="cards" *ngIf="offers_ready">
 
@@ -129,9 +138,5 @@
                 </mat-card>
             </div>
         </div>
-<!--    </mat-card>-->
-
-
-
 </div>
 

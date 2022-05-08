@@ -92,3 +92,19 @@ mat-card-header {
 /*    padding: 5px 5px 5px 5px;*/
 /*    margin: 5px 5px 5px 5px;*/
 /*}*/
+
+.szer_feltet {
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 25px;
+    padding-top: 30px;
+}
+
+mat-list {
+    /*margin: auto;*/
+    /*margin-left: 50px;*/
+    /*margin-right: 50px;*/
+    font-size: 17px;
+    align-self: center
+}

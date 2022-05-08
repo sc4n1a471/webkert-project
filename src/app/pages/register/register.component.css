@@ -53,3 +53,18 @@ mat-card {
     align-self: center;
     width: 50%;
 }
+
+.reg_feltet {
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 25px;
+    padding-top: 30px;
+}
+
+mat-list {
+    margin: auto;
+    margin-left: 50px;
+    margin-right: 50px;
+    font-size: 17px;
+}

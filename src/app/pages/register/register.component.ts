@@ -4,6 +4,7 @@ import {AuthService} from "../../services/auth.service";
 import {User} from "../../models/User";
 import {UserService} from "../../services/user.service";
 import {MatSnackBar} from "@angular/material/snack-bar";
+import {Router} from "@angular/router";
 
 @Component({
     selector: 'app-register',
@@ -21,12 +22,13 @@ export class RegisterComponent implements OnInit {
         birthday: new FormControl('')
     })
 
-
+    loading: boolean = false
 
     constructor(
         private loadingService: AuthService,
         private userService: UserService,
-        private _snackBar: MatSnackBar
+        private _snackBar: MatSnackBar,
+        private router: Router
     ) { }
 
     ngOnInit(): void {
@@ -35,9 +37,11 @@ export class RegisterComponent implements OnInit {
     register() {
 
         console.log(this.registerForm.value.fn)
+        this.loading = true
 
         this.loadingService.normal_signup(this.registerForm.get('email')?.value, this.registerForm.get('passwd')?.value)
             .then(credentials => {
+
 
                 console.log("Sign up credentials: ", credentials)
 
@@ -52,14 +56,18 @@ export class RegisterComponent implements OnInit {
 
                 this.userService.createUser(userCuccli).then(_ => {
                     console.log("Succesful user insert")
+                    this.loading = false
                     this.openSnackBar("Sikeres regisztráció! 👍")
+                    this.router.navigateByUrl("offers")
                 }).catch(_ => {
                     console.error("noooo");
+                    this.loading = false
                     this.openSnackBar("Sikertelen regisztráció! 😢")
                 })
             })
             .catch(error => {
                 console.error(error)
+                this.loading = false;
                 this.openSnackBar('Sikertelen regisztráció! 😢 Hibakód konzolba írva!')
             })
     }

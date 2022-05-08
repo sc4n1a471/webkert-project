@@ -14,6 +14,7 @@ import {MatSelectModule} from "@angular/material/select";
 import {MatCardModule} from "@angular/material/card";
 import {AppModule} from "../../app.module";
 import {OfferCardPipe} from "../../pipes/offer-card.pipe";
+import {MatListModule} from "@angular/material/list";
 
 
 @NgModule({
@@ -34,6 +35,7 @@ import {OfferCardPipe} from "../../pipes/offer-card.pipe";
         MatProgressBarModule,
         MatSelectModule,
         MatCardModule,
+        MatListModule,
         // AppModule
     ],
     exports: [

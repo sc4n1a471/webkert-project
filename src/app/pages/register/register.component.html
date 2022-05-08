@@ -1,3 +1,10 @@
+<span *ngIf="loading">
+    <div class="overlay"></div>
+    <span class="spinner">
+        <mat-spinner></mat-spinner>
+    </span>
+</span>
+
 <div class="register_component">
 
 
@@ -7,37 +14,48 @@
             <form [formGroup]="registerForm">
                 <div class="name_field">
                     <mat-form-field>
-                        <mat-label>Firstname: </mat-label>
+                        <mat-label>Keresztnév: </mat-label>
                         <input matInput type="text" formControlName="fn" />
                     </mat-form-field>
                     <mat-form-field>
-                        <mat-label>Lastname: </mat-label>
+                        <mat-label>Vezetéknév: </mat-label>
                         <input matInput type="text" formControlName="ln" />
                     </mat-form-field>
                 </div>
                 <div class="other_field">
                     <mat-form-field>
-                        <mat-label>Email: </mat-label>
+                        <mat-label>Email cím: </mat-label>
                         <input matInput type="text" formControlName="email" />
                     </mat-form-field>
                     <mat-form-field>
-                        <mat-label>Password: </mat-label>
+                        <mat-label>Jelszó: </mat-label>
                         <input matInput type="password" formControlName="passwd" />
                     </mat-form-field>
                     <mat-form-field>
-                        <mat-label>Confirm password: </mat-label>
+                        <mat-label>Jelszó újra: </mat-label>
                         <input matInput type="password" formControlName="passwd_conf" />
                     </mat-form-field>
                     <mat-form-field>
-                        <mat-label>Date of birth: </mat-label>
+                        <mat-label>Születési dátum: </mat-label>
                         <input matInput type="date" formControlName="birthday" />
                     </mat-form-field>
                 </div>
                 <div>
-                    <button mat-raised-button (click)="register()">Register</button>
+                    <button mat-raised-button color="primary" (click)="register()">Regisztrálás</button>
                 </div>
             </form>
+                <p class="reg_feltet"><strong>Regisztrálási feltételek</strong></p>
+                <mat-list>
+                    <mat-list-item>- 18 éven felülieknek engedélyezett hatósági szabályok okán</mat-list-item>
+                    <mat-list-item>- Fiók létrehozásával elfogadja adatainak marketing célú felhasználását</mat-list-item>
+                </mat-list>
+
+<!--                <ul class="feltetelek">-->
+<!--                    <li>18 éven felülieknek engedélyezett hatósági szabályok okán</li>-->
+<!--                    <li>Fiók létrehozásával elfogadja adatainak marketing célú felhasználását</li>-->
+<!--                </ul>-->
             </mat-card>
+
         </div>
 
 

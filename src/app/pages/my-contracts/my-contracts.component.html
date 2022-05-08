@@ -11,9 +11,9 @@
 
         <mat-table [dataSource]="myContracts" multiTemplateDataRows>
 
-            <ng-container matColumnDef="id">
-                <mat-header-cell *matHeaderCellDef> Szerződés azonosítója </mat-header-cell>
-                <mat-cell *matCellDef="let contract"> {{contract.id}} </mat-cell>
+            <ng-container matColumnDef="license_plate">
+                <mat-header-cell *matHeaderCellDef> Gépjármű rendszáma </mat-header-cell>
+                <mat-cell *matCellDef="let contract"> {{contract.license_plate}} </mat-cell>
             </ng-container>
 
             <ng-container matColumnDef="date">

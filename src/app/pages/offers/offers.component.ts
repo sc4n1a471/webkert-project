@@ -7,6 +7,7 @@ import {ContractService} from "../../services/contract.service";
 import {User} from "../../models/User";
 import {UserService} from "../../services/user.service";
 import {MatSnackBar} from "@angular/material/snack-bar";
+import {Router} from "@angular/router";
 registerLocaleData(localeFr, 'fr');
 
 @Component({
@@ -30,13 +31,13 @@ export class OffersComponent implements OnInit {
         value: new FormControl('', Validators.required),
         weight: new FormControl('', Validators.required),
         brand: new FormControl('', Validators.required),
-        model: new FormControl('', Validators.required),
+        license_plate: new FormControl('', Validators.required),
         performance: new FormControl('', Validators.required)
     })
 
     // newOrUsed: string | undefined
     // progressBarValue = 0
-    errorInForm = false;
+    // errorInForm = true;
     offer?: Offer
     offers?: Array<Offer>;
     offers_ready = false
@@ -56,7 +57,8 @@ export class OffersComponent implements OnInit {
     constructor(
         private offerService: ContractService,
         private userService: UserService,
-        private _snackBar: MatSnackBar
+        private _snackBar: MatSnackBar,
+        private router: Router
     ) { }
 
     ngOnInit(): void {
@@ -101,11 +103,6 @@ export class OffersComponent implements OnInit {
         console.log(this.offers)
         this.offers_ready = true
     }
-
-    // offer_cuccli(ezLenniOffer: Offer) {
-    //   console.log("ezLenniOffer: ", ezLenniOffer)
-    //
-    // }
 
     calculator(dij: number) {
         let personal = this.form_personal.value
@@ -183,18 +180,6 @@ export class OffersComponent implements OnInit {
         // return Math.ceil(dij);
     }
 
-    // updateProgressBar() {
-    //   this.progressBarValue += 10
-    //   console.log("progress bar value: ", this.progressBarValue)
-    // }
-
-    // problem() {
-    //   if (this.form_personal.get('balesetek_szama').hasError('required')) {
-    //     this.errorInForm = true;
-    //     console.log(this.errorInForm)
-    //   }
-    // }
-
     testRequest() {
         let personal = this.form_personal.value
         let car = this.form_car.value
@@ -209,6 +194,7 @@ export class OffersComponent implements OnInit {
         car.value = 20000000
         car.weight = 1800
         car.performance = 300
+        car.license_plate = "AAA111"
 
         this.request_offers()
     }
@@ -223,6 +209,7 @@ export class OffersComponent implements OnInit {
                 id: '',
                 date: new Date().toISOString().split('T')[0],
                 userId: <string>this.user?.id,
+                license_plate: this.form_car.value.license_plate.toUpperCase(),
                 offer: offer
             };
             // this.contract.date = new Date().getDate()
@@ -231,6 +218,7 @@ export class OffersComponent implements OnInit {
             console.log("Contract: ", contract)
             this.offerService.createOffer(contract)
             this.openSnackBar("Sikeres ajánlatválasztás!")
+            this.router.navigateByUrl("my-contracts")
         } else {
             this.openSnackBar("Nincs ajánlat választva!")
         }

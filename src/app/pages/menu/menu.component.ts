@@ -1,6 +1,7 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {AuthService} from "../../services/auth.service";
 import {MatSnackBar} from "@angular/material/snack-bar";
+import {Router} from "@angular/router";
 
 @Component({
     selector: 'app-menu',
@@ -16,7 +17,8 @@ export class MenuComponent implements OnInit {
 
     constructor(
         private loadingService: AuthService,
-        private _snackBar: MatSnackBar
+        private _snackBar: MatSnackBar,
+        private router: Router
     ) { }
 
     ngOnInit(): void {
@@ -37,6 +39,7 @@ export class MenuComponent implements OnInit {
         this.loadingService.normal_logout().then(() => {
             console.log("Succesful logout!")
             this.openSnackBar("Sikeres kijelentkezés! 👍")
+            this.router.navigateByUrl("login")
         }).catch(error => {
             console.error(error)
             this.openSnackBar("Sikertelen kijelentkezés! 😢")

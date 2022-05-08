@@ -3,7 +3,8 @@
     flex-direction: column;
     /*justify-content: center;*/
     text-align: center;
-    height: 2160px;
+    /*height: 2160px;*/
+    height: 100vh;
 }
 
 h1 {
