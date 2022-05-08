@@ -42,9 +42,6 @@ export class RegisterComponent implements OnInit {
         this.loadingService.normal_signup(this.registerForm.get('email')?.value, this.registerForm.get('passwd')?.value)
             .then(credentials => {
 
-
-                console.log("Sign up credentials: ", credentials)
-
                 const userCuccli: User = {
                     id: credentials.user?.uid as string,
                     email: this.registerForm.get('email')?.value,
@@ -55,7 +52,6 @@ export class RegisterComponent implements OnInit {
                 };
 
                 this.userService.createUser(userCuccli).then(_ => {
-                    console.log("Succesful user insert")
                     this.loading = false
                     this.openSnackBar("Sikeres regisztráció! 👍")
                     this.router.navigateByUrl("offers")

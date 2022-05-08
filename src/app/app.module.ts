@@ -18,15 +18,12 @@ import {MatButtonModule} from "@angular/material/button";
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatInputModule} from "@angular/material/input";
 import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
-import { OfferCardPipe } from './pipes/offer-card.pipe';
-import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
 import { provideAuth,getAuth } from '@angular/fire/auth';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import { provideStorage,getStorage } from '@angular/fire/storage';
 import {AngularFireModule} from "@angular/fire/compat";
 import {MatCardModule} from "@angular/material/card";
-// import { MyProfilePipe } from './pipes/my-profile.pipe';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 @NgModule({
@@ -36,8 +33,6 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
         LoginComponent,
         RegisterComponent,
         MenuComponent
-        // MyProfilePipe
-        // OfferCardPipe
     ],
     imports: [
         BrowserModule,
@@ -54,7 +49,6 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
         MatInputModule,
         MatProgressSpinnerModule,
         AngularFireModule.initializeApp(environment.firebase),
-        // provideFirebaseApp(() => initializeApp(environment.firebase)),
         provideAuth(() => getAuth()),
         provideFirestore(() => getFirestore()),
         provideStorage(() => getStorage()),

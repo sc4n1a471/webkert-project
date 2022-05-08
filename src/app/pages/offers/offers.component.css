@@ -1,28 +1,18 @@
 .offers_minden {
     display: flex;
     flex-direction: column;
-    /*justify-content: top;*/
     text-align: center;
     height: 2160px;
-    /*margin: 20px 5px 5px 5px;*/
 }
 
 mat-form-field {
     padding: 5px 5px 5px 5px;
     display: block;
-    /*width: 30%;*/
     align-self: center;
 }
 div button {
     margin: 5px;
-    /*align-self: center;*/
 }
-
-/*.outside {*/
-/*    width: 50%;*/
-/*    align-self: center;*/
-/*    margin: 50px 50px 50px 50px;*/
-/*}*/
 
 form {
     column-count: 2;
@@ -42,28 +32,14 @@ h1 {
     margin-left: 16px;
 }
 
-/*mat-progress-bar {*/
-/*    width: 30%;*/
-/*    align-self: center;*/
-/*    padding: 5px 5px 5px 5px;*/
-/*}*/
-
 mat-divider {
     width: 60%;
     align-self: center;
     padding: 5px 5px 5px 5px;
 }
 
-/*mat-form-field {*/
-/*    padding: 5px 5px 5px 5px;*/
-/*    display: block;*/
-/*    !*width: 30%;*!*/
-/*    align-self: center;*/
-/*}*/
-
 .cards {
     width: 70%;
-    /*display: block;*/
     column-count: 3;
     align-self: center;
     align-content: center;
@@ -88,11 +64,6 @@ mat-card-header {
     padding-bottom: 50px;
 }
 
-/*.details .yearly {*/
-/*    padding: 5px 5px 5px 5px;*/
-/*    margin: 5px 5px 5px 5px;*/
-/*}*/
-
 .szer_feltet {
     text-align: center;
     text-transform: uppercase;
@@ -102,9 +73,6 @@ mat-card-header {
 }
 
 mat-list {
-    /*margin: auto;*/
-    /*margin-left: 50px;*/
-    /*margin-right: 50px;*/
     font-size: 17px;
     align-self: center
 }

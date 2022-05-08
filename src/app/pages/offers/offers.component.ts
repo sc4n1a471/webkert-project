@@ -35,9 +35,6 @@ export class OffersComponent implements OnInit {
         performance: new FormControl('', Validators.required)
     })
 
-    // newOrUsed: string | undefined
-    // progressBarValue = 0
-    // errorInForm = true;
     offer?: Offer
     offers?: Array<Offer>;
     offers_ready = false
@@ -51,7 +48,6 @@ export class OffersComponent implements OnInit {
     feeMultipliers3 = [19000, 39000, 29000, 9, 900, 90]
     fees: Array<Offer_fees> = [];
 
-    // contract!: Contract;
     user?: User;
 
     constructor(
@@ -72,35 +68,15 @@ export class OffersComponent implements OnInit {
     }
 
     request_offers() {
-        console.log("form_personal: ", this.form_personal.value)
-        console.log("form_car: ", this.form_car.value)
 
-        // let yearly = 0
         this.calculator(0)
-
-        // let yearly = 1000
 
         let obj1 = new Offer(this.fees[0], "Allianz Hungária Biztosító", "../../../assets/logos/allianz.png")
         let obj2 = new Offer(this.fees[1],"Aegon Biztosító", "../../../assets/logos/aegon.png")
         let obj3 = new Offer(this.fees[2],"K&H Bank", "../../../assets/logos/kh.png")
 
-        // console.log("offer: ", this.offer)
-
-        // console.log("obj1: ", obj1)
-        // console.log("obj2: ", obj2)
-        // console.log("obj3: ", obj3)
-
-        // this.offer_cuccli(obj1)
-        // this.offer_cuccli(obj2)
-        // this.offer_cuccli(obj3)
-
         this.offers = [obj1, obj2, obj3]
 
-        // this.offers?.push(obj1)
-        // this.offers?.push(obj2)
-        // this.offers?.push(obj3)
-
-        console.log(this.offers)
         this.offers_ready = true
     }
 
@@ -132,10 +108,9 @@ export class OffersComponent implements OnInit {
         }
 
         let evjarat = (((car.year) as String).split("-"))[0]
-        // console.log(evjarat)
+
         let dateTime = new Date()
-        // console.log(dateTime.getFullYear())
-        // console.log(((dateTime.getFullYear() as number) - (evjarat as unknown as number)))
+
         let kor = ((dateTime.getFullYear() as number) - (evjarat as unknown as number))
         if (kor > 0) {
             ageFee = ((1 / kor) * 10000)
@@ -175,35 +150,29 @@ export class OffersComponent implements OnInit {
         )
 
         this.fees = [this.fees1, this.fees2, this.fees3]
-        // this.fees = [this.fees3]
-
-        // return Math.ceil(dij);
     }
 
-    testRequest() {
-        let personal = this.form_personal.value
-        let car = this.form_car.value
-
-        personal.jogsi_meglet = 3
-        personal.jogsi_elvetelek = 0
-        personal.balesetek_szama = 0
-
-        car.type = 'car'
-        car.year = '2021-01-01'
-        car.condition = 'new'
-        car.value = 20000000
-        car.weight = 1800
-        car.performance = 300
-        car.license_plate = "AAA111"
-
-        this.request_offers()
-    }
+    // teszteléshez
+    // testRequest() {
+    //     let personal = this.form_personal.value
+    //     let car = this.form_car.value
+    //
+    //     personal.jogsi_meglet = 3
+    //     personal.jogsi_elvetelek = 0
+    //     personal.balesetek_szama = 0
+    //
+    //     car.type = 'car'
+    //     car.year = '2021-01-01'
+    //     car.condition = 'new'
+    //     car.value = 20000000
+    //     car.weight = 1800
+    //     car.performance = 300
+    //     car.license_plate = "AAA111"
+    //
+    //     this.request_offers()
+    // }
 
     choose(offer: Offer) {
-        // contract.userId = <string>this.user?.id
-        console.log("User chose an offer")
-        console.log("Offer: ", offer)
-        // console.log("Current contract: ", contract)
         if (offer) {
             let contract: Contract = {
                 id: '',
@@ -212,10 +181,6 @@ export class OffersComponent implements OnInit {
                 license_plate: this.form_car.value.license_plate.toUpperCase(),
                 offer: offer
             };
-            // this.contract.date = new Date().getDate()
-            // this.contract.offer = offer
-            // this.contract.userId =
-            console.log("Contract: ", contract)
             this.offerService.createOffer(contract)
             this.openSnackBar("Sikeres ajánlatválasztás!")
             this.router.navigateByUrl("my-contracts")

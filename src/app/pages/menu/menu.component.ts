@@ -37,7 +37,6 @@ export class MenuComponent implements OnInit {
 
     logout() {
         this.loadingService.normal_logout().then(() => {
-            console.log("Succesful logout!")
             this.openSnackBar("Sikeres kijelentkezés! 👍")
             this.router.navigateByUrl("login")
         }).catch(error => {

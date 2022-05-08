@@ -1,6 +1,4 @@
 <div class="offers_minden">
-<!--    <p>offers works!</p>-->
-<!--    <mat-card class="outside">-->
         <h1>Ajánlatkérési formok</h1>
         <mat-divider></mat-divider>
 
@@ -11,7 +9,6 @@
             <mat-form-field appearance="fill">
                 <mat-label>Hány teljes éve van jogosítványa?: </mat-label>
                 <input matInput type="number" formControlName="jogsi_meglet" required/>
-                <!--            <mat-error *ngIf="form_personal.get('jogsi_meglet').invalid">{{problem()}}</mat-error>-->
             </mat-form-field>
             <mat-form-field appearance="fill">
                 <mat-label>Hányszor vették el ez idő alatt a jogosítványt?: </mat-label>
@@ -70,16 +67,12 @@
                 <input matInput type="string" formControlName="performance" required/>
                 <span matSuffix>kW</span>
             </mat-form-field>
-<!--            <mat-form-field appearance="fill">-->
-<!--                <mat-label>Rendszám:</mat-label>-->
-<!--                <input matInput type="string" formControlName="license_plate" required/>-->
-<!--            </mat-form-field>-->
 
         </form>
 
         <div class="buttons">
             <button mat-raised-button color="primary" (click)="request_offers()">Ajánlatkérés beküldése</button>
-            <button mat-raised-button (click)="testRequest()">Test Kiválaszt</button>
+<!--            <button mat-raised-button (click)="testRequest()">Test Kiválaszt</button>-->
 
         </div>
         <mat-divider></mat-divider>
@@ -108,7 +101,6 @@
 
                     <mat-card-header>
                         <mat-card-title>{{offer.nameOfCompany || undefined}}</mat-card-title>
-                        <!--                    <mat-card-subtitle>alcím?</mat-card-subtitle>-->
                     </mat-card-header>
 
                     <img class="logo" mat-card-md-image src="{{offer.logoOfCompany}}" alt="ez lenni logo of insurance company">
@@ -120,15 +112,11 @@
                             {{offer.yearly | currency:'Ft': 'symbol': '0.0': 'fr'}}
                         </h1>
                         <h2 class="details">Lebontás</h2>
-                        <!--                    <h2>{{offer.fees}}</h2>-->
                         <p *ngFor="let fee of offer.fees | keyvalue">
                             {{fee.key | offerCard}}:
                             <br>
                             {{fee.value | currency:'Ft': 'symbol': '0.0': 'fr'}}
                         </p>
-                        <!--                    <span *ngFor="let fee of offer.fees">-->
-                        <!--                        Díj: {{fee.teljesitmenyDij}}-->
-                        <!--                    </span>-->
                     </mat-card-content>
 
                     <mat-card-actions>

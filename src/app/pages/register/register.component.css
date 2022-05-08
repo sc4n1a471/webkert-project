@@ -4,7 +4,6 @@
     justify-content: center;
     text-align: center;
     height: 100%;
-    /*width: 70%;*/
 }
 
 div {
@@ -19,33 +18,26 @@ h1 {
 
 .register_component {
     height: 100vh;
-    /*align-items: center;*/
 }
 
 form div {
     padding: 5px 5px 5px 5px;
-    /*width: 30%;*/
-    /*align-items: center !important;;*/
 }
 
 .name_field {
     column-count: 2;
-    /*width: 80%;*/
     margin-left: 13%;
     margin-right: 13%;
-    /*display: inline-table !important;*/
     align-items: center;
 }
 
 mat-form-field {
     padding: 5px 5px 5px 5px;
-    /*display: block;*/
     width: 60%;
     align-self: center;
 }
 div button {
     margin: 5px;
-    /*align-self: center;*/
 }
 
 mat-card {

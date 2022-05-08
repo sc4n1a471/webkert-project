@@ -13,7 +13,6 @@ import {AuthService} from "./services/auth.service";
 export class AppComponent implements OnInit {
   title = 'webkert-project';
 
-  // openedPage = 'main'
   openedPage = '' // ezzel ha reloadolunk egy oldalt, akkor nem látszódik a main->url átugrás
 
   loggedInUser?: firebase.default.User | null;
@@ -29,9 +28,6 @@ export class AppComponent implements OnInit {
 
 
   changingPage(selectedPage: string) {
-    // this.openedPage = selectedPage
-    // console.log(this.openedPage)
-
     this.router.navigateByUrl(selectedPage)
   }
 
@@ -39,10 +35,7 @@ export class AppComponent implements OnInit {
     this.router.events
         .pipe(filter(events => events instanceof NavigationEnd))
         .subscribe((esemenyek: any) => {
-          /* console.log(esemenyek); */
-          /* console.log(esemenyek.urlAfterRedirects as string); - ez /url-t ad */
           this.openedPage = (esemenyek.urlAfterRedirects as string).split('/')[1];
-          /* console.log(this.openedPage); -- url levágva normálisan */
         })
 
     this.loadingService.isLoggedIn().subscribe(user => {

@@ -24,11 +24,11 @@ export class MyProfileComponent implements OnInit {
 
     ngOnInit(): void {
         this.loading = true;
+
         const user = JSON.parse(localStorage.getItem('user') as string) as firebase.default.User;
+
         this.userService.getUserById(user.uid).subscribe(data => {
-            console.log(data)
             this.userInfo = data;
-            console.log(this.userInfo?.email)
             this.loading = false;
         }, error => {
             console.error(error)

@@ -22,13 +22,11 @@ mat-divider {
 .changeEmail {
     padding: 50px 5px 5px 5px;
     display: block;
-    /*width: 30%;*/
     align-self: center;
 }
 
 .info {
     font-size: medium;
-    /*width: 70%;*/
     align-self: center;
     align-content: center;
     padding: 5px 5px 5px 5px;

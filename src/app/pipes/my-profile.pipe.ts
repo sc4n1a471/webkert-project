@@ -11,7 +11,7 @@ export class MyProfilePipe implements PipeTransform {
         } else {
             let adattagNeve = value as string
             switch (adattagNeve) {
-                case "birtday": {
+                case "birtday": {   // elírtam a birthdayt és egyszerűbb volt utólag így használni, mint megkeresni, hol is írtam el 😂
                     return "Születési dátum"
                 }
                 case "email": {

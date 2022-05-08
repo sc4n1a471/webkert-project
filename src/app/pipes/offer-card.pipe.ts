@@ -36,14 +36,10 @@ export class OfferCardPipe implements PipeTransform {
                 case "teljesitmenyDij": {
                     return "Jármű teljesítménye"
                 }
-                // case "sum": {
-                //     return "Éves díj"
-                // }
                 default: {
                     return "nyeh"
                 }
             }
-            // return (value as string).toUpperCase()
         }
     }
 

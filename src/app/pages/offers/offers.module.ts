@@ -25,7 +25,6 @@ import {MatListModule} from "@angular/material/list";
     imports: [
         CommonModule,
         OffersRoutingModule,
-        // MatFormFieldModule,
         ReactiveFormsModule,
         MatInputModule,
         MatButtonModule,
@@ -35,8 +34,7 @@ import {MatListModule} from "@angular/material/list";
         MatProgressBarModule,
         MatSelectModule,
         MatCardModule,
-        MatListModule,
-        // AppModule
+        MatListModule
     ],
     exports: [
         OfferCardPipe
