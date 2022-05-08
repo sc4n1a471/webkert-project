@@ -6,6 +6,15 @@ Ez lenni repository for webkert-project
 - A Release-nél egy tisztított verzió van, nincsenek teszteléshez használt logolások és hasonlók, kivéve 1. Az offers.html-ben van egy gomb, ami segít gyorsan kitölteni a formot, nem kell mindig kitöltögetni. Ez ki van kommentelve
 - Ha nagyon megakarod érteni a kódot, mert sok időd van, segíthetnek a commitok, azok üzenetei és hasonlók 👍
 - Az összecsomagolt zip-ben alapból nincs benne az environments mappa, azt a CooSpace-en csatolt zipben van, külön kell betenni a projectbe
+---
+- Az Ajánlatkéréses oldalon nincs megvalósítva normálisan a form validátor, így lehetőleg mindent is tölts ki, mert érdekes számok tudnak kijönni! 😉
+- Nagy összefoglaló:
+  - Regisztrálás/Bejelentkezés/Kijelentkezés
+  - Biztosítási ajánlat kalkulálás megadott információ alapján, azok elfogadása/lemondása
+  - Meglévő ajánlatok lekérdezése
+  - Profil felhasználónevének módosítása
+  - Firebase bejelentkeztetés/Firestore mindenség
+  - Pár dolgot lehet kihagytam, úgyis csak egy összefoglaló 👍
 
 ### Useful links:
 - [Hostolt oldal](https://webkert-project-sc4n1a.web.app/)
