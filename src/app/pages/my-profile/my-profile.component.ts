@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {User} from "../../models/User";
 import {UserService} from "../../services/user.service";
 import {FormControl, FormGroup, Validators} from "@angular/forms";
+import {MatSnackBar} from "@angular/material/snack-bar";
 
 @Component({
     selector: 'app-my-profile',
@@ -14,9 +15,12 @@ export class MyProfileComponent implements OnInit {
 
     userInfo?: User;
 
-    newEmail = new FormControl('', Validators.required)
+    newUsername = new FormControl('', Validators.required)
 
-    constructor(private userService: UserService) { }
+    constructor(
+        private userService: UserService,
+        private _snackBar: MatSnackBar
+    ) { }
 
     ngOnInit(): void {
         this.loading = true;
@@ -32,9 +36,17 @@ export class MyProfileComponent implements OnInit {
         })
     }
 
-    updateEmail() {
-        this.userInfo!.email = this.newEmail.value
-        this.userService.updateEmail(this.userInfo as User)
+    updateUsername() {
+        this.userInfo!.username = this.newUsername.value
+        this.newUsername.reset()
+        this.userService.updateUsername(this.userInfo as User)
+        this.openSnackBar("Sikeres módosítás!")
+    }
+
+    openSnackBar(message: string) {
+        this._snackBar.open(message, "Bezár", {
+            duration: 3000
+        });
     }
 
 }

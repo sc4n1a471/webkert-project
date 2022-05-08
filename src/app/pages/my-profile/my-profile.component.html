@@ -17,11 +17,11 @@
 
         <div class="changeEmail">
             <mat-form-field appearance="fill">
-                <mat-label>Email cím módosítása: </mat-label>
-                <input matInput type="email" [formControl]="newEmail" required/>
+                <mat-label>Felhasználónév módosítása: </mat-label>
+                <input matInput type="text" [formControl]="newUsername" required/>
             </mat-form-field>
             <br>
-            <button mat-raised-button color="primary" (click)="updateEmail()">Email cím módosítása</button>
+            <button mat-raised-button color="primary" (click)="updateUsername()">Módosítás</button>
         </div>
     </mat-card>
 

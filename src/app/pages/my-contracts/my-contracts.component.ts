@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ContractService} from "../../services/contract.service";
 import {Contract, Offer} from "../../models/Offer";
+import {MatSnackBar} from "@angular/material/snack-bar";
 
 @Component({
     selector: 'app-my-contracts',
@@ -16,7 +17,10 @@ export class MyContractsComponent implements OnInit {
 
     panelOpenState = false;
 
-    constructor(private contractService: ContractService) { }
+    constructor(
+        private contractService: ContractService,
+        private _snackBar: MatSnackBar
+    ) { }
 
     ngOnInit(): void {
         this.loading = true;
@@ -38,8 +42,16 @@ export class MyContractsComponent implements OnInit {
         console.log("Cancelled contract: ", contract)
         this.contractService.cancelContract(contract.id).then(_ => {
             console.log("Contract with ID ", contract.id, " is cancelled succesfully!")
+            this.openSnackBar("Sikeres szerződésbontás! 👍")
         }).catch(error => {
             console.error(error)
+            this.openSnackBar("Sikertelen szerződésbontás! 😢")
         })
+    }
+
+    openSnackBar(message: string) {
+        this._snackBar.open(message, "Bezár", {
+            duration: 3000
+        });
     }
 }

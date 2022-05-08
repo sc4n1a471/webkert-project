@@ -6,6 +6,7 @@ import localeFr from '@angular/common/locales/fr';
 import {ContractService} from "../../services/contract.service";
 import {User} from "../../models/User";
 import {UserService} from "../../services/user.service";
+import {MatSnackBar} from "@angular/material/snack-bar";
 registerLocaleData(localeFr, 'fr');
 
 @Component({
@@ -52,7 +53,11 @@ export class OffersComponent implements OnInit {
     // contract!: Contract;
     user?: User;
 
-    constructor(private offerService: ContractService, private userService: UserService) { }
+    constructor(
+        private offerService: ContractService,
+        private userService: UserService,
+        private _snackBar: MatSnackBar
+    ) { }
 
     ngOnInit(): void {
         const user = JSON.parse(localStorage.getItem('user') as string) as firebase.default.User;
@@ -225,7 +230,15 @@ export class OffersComponent implements OnInit {
             // this.contract.userId =
             console.log("Contract: ", contract)
             this.offerService.createOffer(contract)
+            this.openSnackBar("Sikeres ajánlatválasztás!")
+        } else {
+            this.openSnackBar("Nincs ajánlat választva!")
         }
+    }
 
+    openSnackBar(message: string) {
+        this._snackBar.open(message, "Bezár", {
+            duration: 3000
+        });
     }
 }

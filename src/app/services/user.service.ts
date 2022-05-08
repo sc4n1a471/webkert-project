@@ -26,7 +26,7 @@ export class UserService {
             .valueChanges();
     }
 
-    updateEmail(user: User) {
+    updateUsername(user: User) {
         return this.angularFirestore
             .collection<User>(this.collectionName)
             .doc(user.id)

@@ -27,6 +27,7 @@ import { provideStorage,getStorage } from '@angular/fire/storage';
 import {AngularFireModule} from "@angular/fire/compat";
 import {MatCardModule} from "@angular/material/card";
 // import { MyProfilePipe } from './pipes/my-profile.pipe';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 @NgModule({
     declarations: [
@@ -57,7 +58,8 @@ import {MatCardModule} from "@angular/material/card";
         provideAuth(() => getAuth()),
         provideFirestore(() => getFirestore()),
         provideStorage(() => getStorage()),
-        MatCardModule
+        MatCardModule,
+        MatSnackBarModule
     ],
     providers: [],
     bootstrap: [AppComponent]
