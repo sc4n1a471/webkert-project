@@ -1,5 +1,5 @@
 # webkert-project
-Ez lenni repository for webkert-project
+Ez lenni repository for webkert-project (Online autóbiztosítás kötés)
 
 ## Segítség a javításhoz
 - Itt a repository szépen vezetve volt, követelmények issue-ként voltak kezelve, így könnyen visszakereshető az Issues menüben, melyik lett teljesítve és hol található a megvalósítás
